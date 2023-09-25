@@ -1,13 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.scss">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-oEdKUcpR11JwStFNS9iNo9HzfnmEZ46IHNPBGKTP5pyiAQZl/lJUf8hQ6J7d71A3" crossorigin="anonymous">
+    <script src="./js/main.js" defer></script>
+    <title>Travel Destinations</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Travel Destinations</h1>
+        <p>Explore the world's most beautiful places</p>
+    </header>
+
+    <nav class="scrolled" class="centered-content" >
+        <ul>
+            <li><a href="#section1" class="active" >Paris</a></li>
+            <li><a href="#section2" >New York</a></li>
+            <li><a href="#section3" >Tokyo</a></li>
+            <li><a href="#section4" >Rio de Janeiro</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="carousel">
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <img src="./assets/PARIS.jpg" alt="Slide 1">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/RIO.jpg" alt="Slide 2">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/Tokyo.jpg" alt="Slide 3">
+                </div>
+                <div class="carousel-slide">
+                    <img src="./assets/PARIS.jpg" alt="Slide 3">
+                </div><div class="carousel-slide">
+                    <img src="./assets/RIO.jpg" alt="Slide 3">
+                </div>
+            </div>
+            <button class="carousel-prev">Prev</button>
+            <button class="carousel-next">Next</button>
+        </section>
+        <section id="video" class="centered-content">
+            <h2>Explore the Beauty</h2>
+            <p>Watch a video showcasing the stunning landscapes of our destinations.</p>
+            
+            <video controls>
+                <source src="./assets/saigon_-_14385 (Original)" type="video/mp4">
+                <source src="./assets/saigon_-_14385 (Original)" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+        
+       
+        <section id="section1" class="centered-content open-modal background-image-Pairs" data-target="paris-modal">
+            <h2>Paris, France</h2>
+            <p>Paris, the capital of France, is known as the City of Light. It's famous for its landmarks such as the Eiffel Tower, Louvre Museum, and Notre-Dame Cathedral.</p>
+            
+        </section>
+        <br>
+        <section id="section2" class="centered-content open-modal background-image-NYC" data-target="new-york-modal">
+            <h2>New York, USA</h2>
+            <p>New York City is a bustling metropolis known for its iconic skyline, Central Park, Times Square, and the Statue of Liberty.</p>
+        </section>
+        <br>
+        <section id="section3" class="centered-content open-modal background-image-Tokyo" data-target="tokyo-modal">
+            <h2>Tokyo, Japan</h2>
+            <p>Tokyo, the capital of Japan, is a vibrant city with a mix of modern skyscrapers and historic temples. It's known for its shopping districts and sushi restaurants.</p>
+        </section>
+        <br>
+        <section id="section4" class="centered-content open-modal background-image-Rio" data-target="rio-modal">
+            <h2>Rio de Janeiro, Brazil</h2>
+            <p>Rio de Janeiro is a coastal city in Brazil known for its beautiful beaches, including Copacabana and Ipanema. The city is also famous for the Christ the Redeemer statue.</p>
+        </section>
+        
+        <!-- Modal for Paris -->
+        <div id="paris-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Paris, France</h2>
+                <p>Paris, the City of Light, is a city steeped in romance and culture. From the iconic Eiffel Tower to the world-renowned Louvre Museum, Paris is a treasure trove of art and history. Stroll along the Seine, explore charming neighborhoods like Montmartre, and indulge in delectable pastries at quaint cafes. With its enchanting ambiance, Paris is a destination that captivates hearts.
+
+                </p>
+            </div>
+        </div>
+        
+        <!-- Modal for New York -->
+        <div id="new-york-modal" class="modal" >
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>New York, USA</h2>
+                <p>New York City, the Big Apple, is a vibrant metropolis that never sleeps. The city's skyline, adorned with towering skyscrapers, is a testament to its boundless energy. Central Park offers an oasis of green in the heart of Manhattan, while Times Square pulsates with life and light. Broadway shows, world-class museums, and the Statue of Liberty are just a few of the city's iconic attractions.</p>
+            </div>
+        </div>
+        
+        <!-- Modal for Tokyo -->
+        <div id="tokyo-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Tokyo, Japan</h2>
+                <p>Tokyo is a city of contrasts, where ultramodern technology coexists with ancient traditions. Skyscrapers tower over historic shrines, and bustling districts like Shinjuku contrast with serene gardens like the Meiji Shrine. Explore the vibrant neighborhoods of Harajuku, sample exquisite sushi, and shop in trendy districts like Shibuya. Tokyo's fusion of old and new creates a truly unique experience.</p>
+            </div>
+        </div>
+        
+        <!-- Modal for Rio de Janeiro -->
+        <div id="rio-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Rio de Janeiro, Brazil</h2>
+                <p>Rio de Janeiro, a city of stunning natural beauty, is nestled between lush mountains and the sparkling Atlantic Ocean. The famous Copacabana and Ipanema beaches offer a sun-soaked paradise, while the Christ the Redeemer statue stands as an iconic symbol. Experience the lively rhythms of samba, explore the Tijuca Forest, and take in breathtaking views from Sugarloaf Mountain.</p>
+            </div>
+        </div>
+        
+  
+        
+        <section id="packages" class="centered-content ">
+            <h2>Explore Our Packages</h2>
+            <br>
+            <div class="column-container ">
+                <div class="column footer-shadow">
+                    <div class="package">
+                        <h3>Parisian Getaway</h3>
+                        <p>Experience the charm of Paris with a 5-day stay in the heart of the city. Visit iconic landmarks like the Eiffel Tower and Louvre Museum.</p>
+                        <span class="price">$1999</span>
+                        <button class="view-package" onclick="view()">View Details</button>
+                    </div>
+                </div>
+                <div class="column footer-shadow">
+                    <div class="package">
+                        <h3>New York Adventure</h3>
+                        <p>Discover the vibrant energy of New York City with a 4-day adventure. Explore Central Park, Times Square, and enjoy Broadway shows.</p>
+                        <span class="price">$1799</span>
+                        <button class="view-package" onclick="view()">View Details</button>
+                    </div>
+                </div>
+                <div class="column footer-shadow">
+                    <div class="package">
+                        <h3>Tokyo Discovery</h3>
+                        <p>Immerse yourself in the culture of Tokyo with a 6-day journey. Visit historic temples, indulge in sushi, and explore bustling districts.</p>
+                        <span class="price">$2499</span>
+                        
+                        <button class="view-package" onclick="view()">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+    </main>
+
+    <footer class="centered-content ">
+        <p>&copy; 2023 Travel Destinations. All rights reserved.</p>
+        <ul class="social-icons">
+            <li><a href="https://amsozzer.web.app/contact.html"><img src="./assets/facebook.png" alt="Facebook"></a></li>
+            <li><a href="https://github.com/Amsozzer1"><img src="./assets/icons8-github-50.png" alt="Twitter"></a></li>
+            <li><a href="https://www.instagram.com/amsozzer/"><img src="./assets/instagram.png" alt="Instagram"></a></li>
+            
+
+        </ul>
+    </footer>
+</body>
+
 </html>

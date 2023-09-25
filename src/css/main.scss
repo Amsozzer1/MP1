@@ -1,1 +1,549 @@
-/* Your SCSS here. */
+/*VARIABLES*/
+$paris-image: url('../assets/PARIS.jpg');
+$nyc-image: url('../assets/NYC.jpg');
+$tokyo-image: url('../assets/Tokyo.jpg');
+$rio-image: url('../assets/RIO.jpg');
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a basic font and background color */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 50px;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+/* Navigation Styles */
+/* Navigation Styles */
+nav {
+    position: fixed; /* Make the navigation bar sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #444;
+    padding: 10px;
+    z-index: 1000; /* Ensure it's on top of other elements */
+    height: 45px;
+    color:black;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color:black;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:black;
+}
+
+nav ul li a.active {
+    text-decoration: none;
+    color: white;
+}
+nav.scrolled {
+    height: 35px; /* Adjust size as needed */
+    color:black;
+}
+
+nav.scrolled a {
+    font-size: 14px; /* Adjust font size as needed */
+    color:black;
+}
+
+
+.position-indicator {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Example height for indicator */
+    background-color: #007bff; /* Example color for indicator */
+}
+/* Define animations */
+@keyframes slideIn {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to specific elements */
+  #carousel .carousel-slide {
+    animation: slideIn 1s ease-out forwards;
+  }
+  
+  #video h2, #video p, #video video {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  /* Add animations for modal appearance */
+  .modal {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+  
+  .modal-content {
+    animation: slideIn 0.5s ease-out forwards;
+  }
+  
+
+
+
+/* Section Styles */
+section {
+    padding: 5% 10%; /* Adjust padding for responsiveness */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    
+}
+.footer-shadow{
+    box-shadow: 0 4px 8px rgba(90, 45, 2, 20);
+}
+.social-icons {
+    list-style-type: none;
+    padding: 0;
+    
+}
+
+.social-icons li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 20px; /* Adjust size as needed for responsiveness */
+    height: 20px; /* Adjust size as needed for responsiveness */
+}
+/* Add carousel styles */
+#carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f5f5f5; /* Background color of the carousel */
+    height: 62.5rem; /* Adjust height as needed */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333; /* Background color of the buttons */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.carousel-prev {
+    left: 10px;
+}
+
+.carousel-next {
+    right: 10px;
+}
+/* Add multi-column styles */
+#multicolumn {
+    padding: 50px;
+    background-color: #fff; /* Background color of the section */
+}
+
+.column-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+    background-color: #f5f5f5; /* Background color of the columns */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.column h3 {
+    font-size: 1.2em;
+}
+
+.column p {
+    font-size: 1em;
+}
+/* Centered Content Styles */
+.centered-content {
+    text-align: center;
+}
+
+.centered-content ul,
+.centered-content li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.centered-content img {
+    vertical-align: middle;
+}
+@media (max-width: 1920px) {
+    /* Add specific styles for 1920x1080 resolution */
+    body {
+        font-size: 18px;
+    }
+    .carousel-container{
+        height: 62.5rem;
+    }
+}
+
+@media (max-width: 1366px) {
+    /* Add specific styles for 1366x768 resolution */
+    body {
+        font-size: 16px;
+    }
+    .carousel-container{
+        height: 42.5rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    /* Add specific styles for 1280x720 resolution */
+    body {
+        font-size: 14px;
+    }
+    .carousel-container{
+        height: 32.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    /* Add specific styles for 1024x768 resolution */
+    body {
+        font-size: 12px;
+    }
+    .carousel-container{
+        height: 22.5rem;
+    }
+}
+@media (max-width: 1920px) {
+    section {
+        padding: 4% 8%; /* Adjust padding for responsiveness */
+    }
+
+}
+
+@media (max-width: 1366px) {
+    section {
+        padding: 3% 6%; /* Adjust padding for responsiveness */
+    }
+
+}
+
+@media (max-width: 1280px) {
+    section {
+        padding: 2% 4%; /* Adjust padding for responsiveness */
+    }
+    
+    
+}
+
+@media (max-width: 1024px) {
+    section {
+        padding: 1% 2%; /* Adjust padding for responsiveness */
+    }
+    .column-container{
+        padding: 1% 2%;
+        flex-direction:column-reverse;
+
+        
+        
+    }
+    .column-container>div{
+        margin: 0 0 10px 0;
+    }
+
+}
+/* Add background image section styles */
+#background-image {
+    background-image: url('../assets/photo-1592743263126-bb241ee76ac7.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #fff; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+}
+.background-image-Pairs {
+    background-image: $paris-image; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1000;
+}
+#background-image .content {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay for better readability */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+#background-image h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#background-image p {
+    font-size: 1.2em;
+}
+.background-image-Pairs {
+    background-image: $paris-image; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(90, 45, 2, 20);
+}
+.background-image-NYC{
+    background-image: $nyc-image; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: black; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(90, 45, 2, 20);
+}
+.background-image-Tokyo{
+    background-image: $tokyo-image; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: violet; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(90, 45, 2, 20);
+}
+.background-image-Rio{
+    background-image:$rio-image; /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white; /* Text color for contrast */
+    text-align: center;
+    padding: 100px 0;
+    z-index: 1000;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(90, 45, 2, 20);
+}
+/* Modal Styles */
+/* Add this to your SCSS file */
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hide modal by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color:black;
+}
+
+/* Add hover effect to close button */
+.close-modal:hover {
+    color: #f44336;
+}
+
+/* Show modal when it's active */
+.modal.active {
+    display: block;
+}
+.open-modal {
+    cursor: pointer;
+    padding: 100px;
+}
+/* Video Section Styles */
+/* Video Section Styles */
+#video {
+    text-align: center;
+    padding: 50px;
+    background-color: #fff; /* Background color of the section */
+    animation: fadeIn 1s ease; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#video h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    animation: fadeInUp 1s ease 0.5s; /* Add fade-in animation with delay */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#video p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease 1s; /* Add fade-in animation with delay */
+}
+
+#video video {
+    max-width: 100%;
+    height: auto;
+    animation: fadeInUp 1s ease 1.5s; /* Add fade-in animation with delay */
+}
+.my-icon {
+    font-size: 25em; /* Adjust size as needed */
+    color: #FF5733; /* Adjust color as needed */
+}
+#packages {
+    padding: 50px;
+    background-color: #fff; /* Background color of the section */
+}
+
+.column-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.package {
+    background-color: #f5f5f5; /* Background color of the packages */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.package h3 {
+    font-size: 1.2em;
+}
+
+.package p {
+    font-size: 1em;
+}
+
+.package .price {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.package .view-package {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333; /* Background color of the button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
